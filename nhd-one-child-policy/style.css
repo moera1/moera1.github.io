@@ -1,0 +1,380 @@
+/* ==========================================================================
+   Base & Reset Styles
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #b11928;
+  color: #222222;
+  line-height: 1.6;
+  padding: 20px 0;
+
+  /* Add Background Image Properties Here */
+  background-image: url('images/bg.jpg'); /* Relative path or URL */
+  background-size: cover;                                /* Scales image to fill screen */
+  background-position: center center;                    /* Centers the image */
+  background-repeat: no-repeat;                          /* Prevents image repetition */
+  background-attachment: fixed;
+}
+
+/* ==========================================================================
+   Fixed Width Wrapper Container
+   ========================================================================== */
+.site-wrapper {
+  max-width: 1140px; /* Fixed maximum width similar to NHD standard sites */
+  margin: 0 auto;
+  background-color: #ffe5e5;
+  padding: 24px 32px;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Section Dividers */
+.section-divider {
+  border: none;
+  border-top: 1px solid #cccccc;
+  margin: 20px 0;
+}
+
+/* ==========================================================================
+   Top Navigation
+   ========================================================================== */
+.top-nav nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.top-nav a {
+  text-decoration: none;
+  color: #111111;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.top-nav a:hover,
+.top-nav a.active {
+  background-color: #b11928;
+  color: #ffffff;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e4e8;
+  border-radius: 4px;
+  z-index: 100;
+  padding: 6px 0;
+}
+
+.dropdown-content a {
+  color: #333333;
+  display: block;
+  border-radius: 0;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f3f5;
+  color: #b11928;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ==========================================================================
+   Content Blocks
+   ========================================================================== */
+.content-container {
+  padding: 10px 0;
+}
+
+.content-container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+/* Images & Media */
+.media-block .image-wrapper {
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;   
+  justify-content: center;
+}
+
+.banner-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid #e1e4e8;
+}
+
+.media-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+  border: 1px solid #e1e4e8;
+}
+
+.caption {
+  font-size: 0.85rem;
+  color: #333333;
+  margin-top: 2px;
+  font-style: italic;
+  text-align: center;
+}
+
+.credit {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Text Formatting */
+
+.text-block p {
+  font-size: 1.1rem;
+  color: #111111;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.text-block h2 {
+  font-size: 1.3rem;
+  color: #111111;
+  text-align: justify;
+  margin-bottom: 8px;
+}
+
+.text-block.text-center h2 {
+  font-size: 1.3rem;
+  color: #111111;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.text-block.text-sm {
+  font-size: 0.8rem;
+  color: #111111;
+  text-align: justify;
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+
+.text-block.text-md {
+  font-size: 1.3rem;
+  color: #111111;
+  text-align: justify;
+}
+
+.text-block.text-lg {
+  font-size: 1.5rem;
+  color: #111111;
+  text-align: justify;
+}
+
+.text-block.text-xl {
+  font-size: 1.7rem;
+  color: #111111;
+  text-align: justify;
+}
+
+.text-center-wrapper {
+  text-align: center;
+}
+
+/* ==========================================================================
+   Bottom Navigation
+   ========================================================================== */
+.bottom-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+/* Centered Modifier for Main/Home Page */
+.bottom-nav.nav-center {
+  justify-content: center;
+}
+
+.bottom-nav a {
+  background-color: #b11928;
+  text-decoration: none;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid #b11928;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.bottom-nav a:hover {
+  background-color: #ffffff;
+  color: #b11928;
+}
+
+/* ==========================================================================
+   12-Unit Grid System
+   ========================================================================== */
+
+/* Grid Row Container */
+.row-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Divides row into 12 equal tracks */
+  gap: 24px;                              /* Spacing between columns */
+  margin: 24px 0;
+  align-items: start;
+}
+
+/* Span Utility Classes (1 to 12) */
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* Ensure all images inside grid columns scale to fit their container */
+.row-12 img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;      /* Centers the image horizontally inside its column */
+  border-radius: 6px;
+}
+
+/* Apply to images inside an equal-height row */
+.equal-height-row img {
+  height: 300px;        /* Forces all images in the row to 300px tall */
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto
+  object-fit: cover;    /* Crops excess top/bottom or sides without stretching */
+  border-radius: 6px;
+}
+
+/* Mobile Responsiveness: Stacks all columns on mobile screens */
+@media (max-width: 768px) {
+  .row-12 > [class*="col-"] {
+    grid-column: span 12;
+  }
+}
+
+/* ==========================================================================
+   Styling the Quote Block
+   ========================================================================== */
+
+.quote-card {
+  padding: 0px 20px;
+  margin-bottom: 12px;
+  font-style: italic;
+  border-radius: 0 4px 4px 0;
+}
+
+.quote-card p {
+  font-size: 1.1rem;
+  color: #222222;
+  margin-bottom: 8px;
+}
+
+.quote-card cite {
+  padding-top: 10px;
+  display: block;
+  font-size: 0.95rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: right;
+}
+
+.quote-card.quote-md {
+  font-size: 1.3rem;
+  color: #b11928;
+  margin-bottom: 8px;
+}
+
+.quote-card.quote-md cite {
+  font-size: 1.1rem;
+  color: #b11928;
+}
+
+.quote-card.quote-lg {
+  font-size: 1.5rem;
+  color: #b11928;
+  margin-bottom: 8px;
+}
+
+.quote-card.quote-lg cite {
+  font-size: 1.3rem;
+}
+
+.analysis-text {
+  font-size: 0.95rem;
+  color: #333333;
+  line-height: 1.5;
+}
+
+/* Gray Border Left */
+.quote-card.quote-gray {
+  border-left: 4px solid #aaaaaa;
+}
+
+/* Blue Border Left */
+.quote-card.quote-blue {
+  border-left: 6px solid #4693e6;
+}
+
+/* Purple Border Left */
+.quote-card.quote-purple {
+  border-left: 6px solid #9644ee;
+}
+
+/* Red background with rounded corners on all 4 sides */
+.quote-card.quote-solid {
+  padding: 20px 30px;
+  background-color: #b11928;
+  color: #ffffff;
+  border-left: none;
+  border-radius: 12px; /* Uniform rounded corners since there's no left accent bar */
+  margin-bottom: 20px;
+}
+
+/* Mobile Responsiveness: Stacking columns vertically on narrow screens */
+@media (max-width: 768px) {
+  .column-row {
+    flex-direction: column;
+  }
+}
